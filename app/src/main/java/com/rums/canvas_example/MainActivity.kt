@@ -1,4 +1,4 @@
-package com.rums.android_geocode
+package com.rums.canvas_example
 
 import android.os.Bundle
 import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN

@@ -1,4 +1,4 @@
-package com.rums.android_geocode
+package com.rums.canvas_example
 
 import android.content.Context
 import android.graphics.*
@@ -9,7 +9,6 @@ import androidx.core.content.res.ResourcesCompat
 
 class MyCanvasView(context: Context) : View(context) {
 
-
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
     private val backgroundColor = ResourcesCompat.getColor(resources, R.color.teal_200, null)
@@ -17,7 +16,6 @@ class MyCanvasView(context: Context) : View(context) {
     private val drawColor = ResourcesCompat.getColor(resources, R.color.black, null)
 
     private lateinit var frame: Rect
-
 
     // Set up the paint with which to draw.
     private val paint = Paint().apply {
@@ -105,7 +103,6 @@ class MyCanvasView(context: Context) : View(context) {
             extraCanvas.drawPath(path, paint)
         }
         invalidate()
-
     }
 
     private fun touchUp() {
