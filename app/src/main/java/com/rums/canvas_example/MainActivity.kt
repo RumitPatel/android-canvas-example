@@ -14,7 +14,5 @@ class MainActivity : AppCompatActivity() {
         myCanvasView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
         myCanvasView.contentDescription = getString(R.string.app_name)
         setContentView(myCanvasView)
-
-
     }
 }
