@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.rums.android_geocode'
+    namespace 'com.rums.canvas_example'
     compileSdk 32
 
     defaultConfig {

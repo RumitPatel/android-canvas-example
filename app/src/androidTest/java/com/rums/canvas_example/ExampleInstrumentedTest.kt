@@ -1,4 +1,4 @@
-package com.rums.android_geocode
+package com.rums.canvas_example
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
