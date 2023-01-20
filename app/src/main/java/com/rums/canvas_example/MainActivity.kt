@@ -26,5 +26,10 @@ class MainActivity : AppCompatActivity() {
         btnUndo.setOnClickListener {
 
         }
+
+        val btnRedo = findViewById<Button>(R.id.btnRedo)
+        btnRedo.setOnClickListener {
+
+        }
     }
 }
