@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <com.rums.canvas_example.MyCanvasView
-        android:id="@+id/mCanvasView"
+        android:id="@+id/canvasView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -19,15 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Undo" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRedo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Redo" />
+
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSave"
+            android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save" />
+            android:text="Clear" />
     </TableRow>
 </LinearLayout>
