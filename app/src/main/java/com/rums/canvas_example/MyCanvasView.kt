@@ -2,12 +2,17 @@ package com.rums.canvas_example
 
 import android.content.Context
 import android.graphics.*
+import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import androidx.core.content.res.ResourcesCompat
 
-class MyCanvasView(context: Context) : View(context) {
+class MyCanvasView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
 
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
