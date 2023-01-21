@@ -1,18 +1,43 @@
 package com.rums.canvas_example
 
+import android.content.Context
 import android.os.Bundle
-import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val myCanvasView = MyCanvasView(this)
-        myCanvasView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
-        myCanvasView.contentDescription = getString(R.string.app_name)
-        setContentView(myCanvasView)
+        initComponents()
+        setListeners()
+    }
+
+    private fun initComponents() {
+        mContext = this
+    }
+
+    private fun setListeners() {
+        val myCanvasView = findViewById<MyCanvasView>(R.id.canvasView)
+
+        val btnUndo = findViewById<Button>(R.id.btnUndo)
+        btnUndo.setOnClickListener {
+
+            myCanvasView.undoCanvasDrawing()
+        }
+
+        val btnRedo = findViewById<Button>(R.id.btnRedo)
+        btnRedo.setOnClickListener {
+            myCanvasView.redoCanvasDrawing()
+        }
+
+        val btnClear = findViewById<Button>(R.id.btnClear)
+        btnClear.setOnClickListener {
+            myCanvasView.resetCanvasDrawing()
+        }
     }
 }
