@@ -10,9 +10,7 @@ import androidx.core.content.res.ResourcesCompat
 import kotlin.math.abs
 
 class MyCanvasView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     private lateinit var extraCanvas: Canvas
@@ -69,7 +67,6 @@ class MyCanvasView @JvmOverloads constructor(
         extraCanvas.drawRect(frame, paint)
     }
 
-
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         motionTouchEventX = event!!.x
         motionTouchEventY = event.y
@@ -80,7 +77,6 @@ class MyCanvasView @JvmOverloads constructor(
             MotionEvent.ACTION_UP -> touchUp()
         }
         return true
-
     }
 
     private fun touchStart() {
