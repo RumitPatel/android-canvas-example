@@ -115,7 +115,15 @@ class MyCanvasView @JvmOverloads constructor(
         path.reset()
     }
 
-    private fun undo() {
+    fun undoCanvasDrawing() {
+        // TODO Undo canvas
+    }
 
+    fun redoCanvasDrawing() {
+        // TODO Redo canvas
+    }
+
+    fun resetCanvasDrawing() {
+        // TODO clear canvas
     }
 }
