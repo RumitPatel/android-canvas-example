@@ -10,7 +10,7 @@ import android.view.ViewConfiguration
 import androidx.core.content.res.ResourcesCompat
 import kotlin.math.abs
 
-class CanvasCustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
+class UndoCanvasCustomView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
     companion object {
         private const val STROKE_WIDTH = 12f
     }
