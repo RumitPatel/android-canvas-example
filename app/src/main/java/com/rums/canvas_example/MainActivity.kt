@@ -22,22 +22,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        val myCanvasView = findViewById<MyCanvasView>(R.id.canvasView)
+        val undoCanvasView = findViewById<UndoCanvasCustomView>(R.id.undoCanvasView)
 
         val btnUndo = findViewById<Button>(R.id.btnUndo)
         btnUndo.setOnClickListener {
 
-            myCanvasView.undoCanvasDrawing()
+            undoCanvasView.undoCanvasDrawing()
         }
 
         val btnRedo = findViewById<Button>(R.id.btnRedo)
         btnRedo.setOnClickListener {
-            myCanvasView.redoCanvasDrawing()
+            undoCanvasView.redoCanvasDrawing()
         }
 
         val btnClear = findViewById<Button>(R.id.btnClear)
         btnClear.setOnClickListener {
-            myCanvasView.resetCanvasDrawing()
+            undoCanvasView.resetCanvasDrawing()
         }
     }
 }
