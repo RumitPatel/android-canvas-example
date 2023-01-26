@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Canvas example</string>
+
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="clear">Clear</string>
 </resources>
