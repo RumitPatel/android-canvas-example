@@ -24,18 +24,18 @@
             android:id="@+id/btnUndo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Undo" />
+            android:text="@string/undo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRedo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Redo" />
+            android:text="@string/redo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear" />
+            android:text="@string/clear" />
     </TableRow>
 </LinearLayout>
