@@ -7,4 +7,4 @@ Output:
 ![Canvas example output](https://github.com/RumitPatel/android-canvas-example/blob/assets/canvas-example.gif?raw=true)
 
 
-The next step is to implement Undo and Redo functionality.
+The next step is to implement **Undo** and **Redo** functionality.
