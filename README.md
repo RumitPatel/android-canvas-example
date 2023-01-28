@@ -4,7 +4,7 @@ This example simply demonstrate Drawing on Canvas Objects with use of Advanced A
 I am following the tutorial: [Drawing on Canvas Objects.](https://developer.android.com/codelabs/advanced-android-kotlin-training-canvas#0) and [This github project](https://github.com/googlecodelabs/android-kotlin-drawing-canvas) 
 
 Output:
-![Canvas example output](https://github.com/RumitPatel/android-canvas-example/blob/assets/canvas-example.gif?raw=true)
+![Canvas example output](https://github.com/RumitPatel/android-canvas-example/blob/main/demo_images/android_canvas_example.gif)
 
 
 The next step is to implement **Undo** and **Redo** functionality.
