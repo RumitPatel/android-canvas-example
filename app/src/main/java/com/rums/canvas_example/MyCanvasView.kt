@@ -59,7 +59,7 @@ class MyCanvasView @JvmOverloads constructor(
         frame = Rect(inset, inset, width - inset, height - inset)
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         // Draw the bitmap that has the saved path.
         canvas?.drawBitmap(extraBitmap, 0f, 0f, null)
