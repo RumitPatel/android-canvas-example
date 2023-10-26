@@ -37,13 +37,10 @@ class CanvasDotWithFinger @JvmOverloads constructor(
 
             MotionEvent.ACTION_UP -> {
                 logE("Action was UP")
-/*                point.x = event.x
-                point.y = event.y
-                invalidate()*/
             }
         }
 
-        return /*super.onTouchEvent(event)*/ true
+        return super.onTouchEvent(event)
 
     }
 
