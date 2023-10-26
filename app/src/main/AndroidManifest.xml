@@ -25,7 +25,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".draw_with_finger.DrawWithFingerActivity"/>
+        <activity android:name=".draw_with_finger.DrawWithFingerActivity" />
+        <activity android:name=".draw_with_finger_2.DotWithFingerActivity" />
     </application>
 
 </manifest>

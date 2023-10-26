@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rums.canvas_example.draw_with_finger.DrawWithFingerActivity
+import com.rums.canvas_example.draw_with_finger_2.DotWithFingerActivity
 import com.rums.gestures_example.adapter.CustomAdapter
 import com.rums.gestures_example.adapter.OnItemClickListener
 
@@ -34,7 +35,7 @@ class MainActivity : Activity() {
     private fun getTempTitles(): ArrayList<String> {
         val arrayList: ArrayList<String> = ArrayList()
         arrayList.add("Draw with finger")
-        arrayList.add("TestActivity")
+        arrayList.add("Dot with finger")
 
         return arrayList
     }
@@ -47,7 +48,7 @@ class MainActivity : Activity() {
                 }
 
                 1 -> {
-//                    startActivity(Intent(mContext, TouchAndScaleTestActivity::class.java))
+                    startActivity(Intent(mContext, DotWithFingerActivity::class.java))
                 }
             }
         }
