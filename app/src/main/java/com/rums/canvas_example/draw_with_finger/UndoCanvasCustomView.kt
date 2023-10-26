@@ -1,4 +1,4 @@
-package com.rums.canvas_example
+package com.rums.canvas_example.draw_with_finger
 
 import android.content.Context
 import android.graphics.Canvas
@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import androidx.core.content.res.ResourcesCompat
+import com.rums.canvas_example.R
 import kotlin.math.abs
 
 class UndoCanvasCustomView @JvmOverloads constructor(

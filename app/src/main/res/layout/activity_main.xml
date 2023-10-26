@@ -4,38 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.rums.canvas_example.MyCanvasView
-        android:id="@+id/canvasView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent" />
 
-    <com.rums.canvas_example.UndoCanvasCustomView
-        android:id="@+id/undoCanvasView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnUndo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/undo" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnRedo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/redo" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear" />
-    </TableRow>
 </LinearLayout>

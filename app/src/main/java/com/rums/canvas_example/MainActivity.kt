@@ -1,43 +1,55 @@
 package com.rums.canvas_example
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.rums.canvas_example.draw_with_finger.DrawWithFingerActivity
+import com.rums.gestures_example.adapter.CustomAdapter
+import com.rums.gestures_example.adapter.OnItemClickListener
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     private lateinit var mContext: Context
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var rv: RecyclerView
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initComponents()
-        setListeners()
     }
 
     private fun initComponents() {
         mContext = this
+
+        rv = findViewById(R.id.rv)
+        rv.layoutManager = LinearLayoutManager(mContext)
+
+        val adapter = CustomAdapter(mContext, getTempTitles(), mOnItemClickListener)
+        rv.adapter = adapter
     }
 
-    private fun setListeners() {
-        val undoCanvasView = findViewById<UndoCanvasCustomView>(R.id.undoCanvasView)
+    private fun getTempTitles(): ArrayList<String> {
+        val arrayList: ArrayList<String> = ArrayList()
+        arrayList.add("Draw with finger")
+        arrayList.add("TestActivity")
 
-        val btnUndo = findViewById<Button>(R.id.btnUndo)
-        btnUndo.setOnClickListener {
+        return arrayList
+    }
 
-            undoCanvasView.undoCanvasDrawing()
-        }
+    private val mOnItemClickListener: OnItemClickListener = object : OnItemClickListener {
+        override fun onItemClick(position: Int) {
+            when (position) {
+                0 -> {
+                    startActivity(Intent(mContext, DrawWithFingerActivity::class.java))
+                }
 
-        val btnRedo = findViewById<Button>(R.id.btnRedo)
-        btnRedo.setOnClickListener {
-            undoCanvasView.redoCanvasDrawing()
-        }
-
-        val btnClear = findViewById<Button>(R.id.btnClear)
-        btnClear.setOnClickListener {
-            undoCanvasView.resetCanvasDrawing()
+                1 -> {
+//                    startActivity(Intent(mContext, TouchAndScaleTestActivity::class.java))
+                }
+            }
         }
     }
 }
