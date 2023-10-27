@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".draw_with_finger.DrawWithFingerActivity" />
         <activity android:name=".draw_with_finger_2.DotWithFingerActivity" />
+        <activity android:name=".move_dot_with_finger.MoveDotWithFingerActivity" />
+        <activity android:name=".draw_line_with_finger.DrawLineWithFingerActivity" />
     </application>
 
 </manifest>

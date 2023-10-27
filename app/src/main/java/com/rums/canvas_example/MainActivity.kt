@@ -6,8 +6,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.rums.canvas_example.draw_line_with_finger.DrawLineWithFingerActivity
 import com.rums.canvas_example.draw_with_finger.DrawWithFingerActivity
 import com.rums.canvas_example.draw_with_finger_2.DotWithFingerActivity
+import com.rums.canvas_example.move_dot_with_finger.MoveDotWithFingerActivity
 import com.rums.gestures_example.adapter.CustomAdapter
 import com.rums.gestures_example.adapter.OnItemClickListener
 
@@ -34,8 +36,10 @@ class MainActivity : Activity() {
 
     private fun getTempTitles(): ArrayList<String> {
         val arrayList: ArrayList<String> = ArrayList()
-        arrayList.add("Draw with finger")
+        arrayList.add("Demo from Codelabs")
         arrayList.add("Dot with finger")
+        arrayList.add("Move dot with finger")
+        arrayList.add("Draw line with finger")
 
         return arrayList
     }
@@ -49,6 +53,14 @@ class MainActivity : Activity() {
 
                 1 -> {
                     startActivity(Intent(mContext, DotWithFingerActivity::class.java))
+                }
+
+                2 -> {
+                    startActivity(Intent(mContext, MoveDotWithFingerActivity::class.java))
+                }
+
+                3 -> {
+                    startActivity(Intent(mContext, DrawLineWithFingerActivity::class.java))
                 }
             }
         }
