@@ -71,7 +71,7 @@ class CanvasDrawLineWithFinger @JvmOverloads constructor(
                 val distanceX = kotlin.math.abs(motionTouchEventX - currentX)
                 val distanceY = kotlin.math.abs(motionTouchEventY - currentY)
 
-                if (distanceX >= touchTolerance || distanceY >= touchTolerance) {
+//                if (distanceX >= touchTolerance || distanceY >= touchTolerance) { //comment due to (print dot issue on touch)
                     path.quadTo(
                         currentX,
                         currentY,
@@ -80,7 +80,7 @@ class CanvasDrawLineWithFinger @JvmOverloads constructor(
                     )
                     currentX = motionTouchEventX
                     currentY = motionTouchEventY
-                }
+//                }
                 invalidate()
             }
 
