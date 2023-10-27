@@ -36,7 +36,7 @@ class MainActivity : Activity() {
 
     private fun getTempTitles(): ArrayList<String> {
         val arrayList: ArrayList<String> = ArrayList()
-        arrayList.add("Draw with finger")
+        arrayList.add("Demo from Codelabs")
         arrayList.add("Dot with finger")
         arrayList.add("Move dot with finger")
         arrayList.add("Draw line with finger")
