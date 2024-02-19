@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateNext() {
         if (currentHead == 25) {
-            currentHead = 4
+            currentHead = 1
         } else {
             currentHead += 1
         }
@@ -132,9 +132,9 @@ class MainActivity : AppCompatActivity() {
             if (i == currentHead) {
                 arrList[i] = 1
             } else if (i == (currentHead - 1)) {
-                arrList[i - 1] = 2
+                arrList[i] = 2
             } else if (i == (currentHead - 2)) {
-                arrList[i - 2] = 3
+                arrList[i] = 3
             } else {
                 arrList[i] = 0
             }
