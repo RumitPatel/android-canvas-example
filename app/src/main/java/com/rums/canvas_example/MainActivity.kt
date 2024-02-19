@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.rums.canvas_example.utils.getDrawlFromType
 import com.rums.canvas_example.utils.getRoundLp
 import com.rums.canvas_example.utils.setBGDrawable
-import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,14 +20,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var linRight: LinearLayout
     private lateinit var btn1: Button
 
-    var arraylist = ArrayList<Int>()
+    private var arrList = ArrayList<Int>()
+
+    private var currentHead = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initComponents()
-
 
     }
 
@@ -43,14 +43,7 @@ class MainActivity : AppCompatActivity() {
         prepareCircleArray()
         drawAllLines()
 
-        val handler = Handler()
-        handler.postDelayed(object : Runnable {
-            override fun run() {
-                goNext()
-                handler.postDelayed(this, 1000)//1 sec delay
-            }
-        }, 0)
-
+        setRepeat()
     }
 
     private fun setListeners() {
@@ -59,15 +52,30 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setRepeat() {
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                goNext()
+                handler.postDelayed(this, 500)//half sec delay
+            }
+        }, 0)
+    }
+
     private fun prepareCircleArray() {
         repeat(25) {
-            arraylist.add(0)
+            if (it == 0 || it == 1 || it == 2 || it == 3) {
+                arrList.add(it)
+                currentHead = it
+            } else {
+                arrList.add(0)
+            }
         }
     }
 
     private fun resetCircleArray() {
-        for (i in arraylist.indices) {
-            arraylist[i] = 0
+        for (i in arrList.indices) {
+            arrList[i] = 0
         }
     }
 
@@ -77,14 +85,14 @@ class MainActivity : AppCompatActivity() {
         createRightRows()
     }
 
-    private fun clearAllCircles() {
+    private fun clearAllCircleViews() {
         linLeft.removeAllViews()
         linUp.removeAllViews()
         linRight.removeAllViews()
     }
 
     private fun createLeftRows() {
-        for (item in arraylist.subList(0, 10)) {
+        for (item in arrList.subList(0, 10)) {
             val iv = View(mContext)
             iv.setBGDrawable(mContext, getDrawlFromType(item))
             iv.layoutParams = getRoundLp()
@@ -93,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createUpRows() {
-        for (item in arraylist.subList(10, 14)) {
+        for (item in arrList.subList(10, 14)) {
             val iv = View(mContext)
             iv.setBGDrawable(mContext, getDrawlFromType(item))
             iv.layoutParams = getRoundLp()
@@ -102,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createRightRows() {
-        for (item in arraylist.subList(14, 24)) {
+        for (item in arrList.subList(14, 24)) {
             val iv = View(mContext)
             iv.setBGDrawable(mContext, getDrawlFromType(item))
             iv.layoutParams = getRoundLp()
@@ -111,14 +119,51 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goNext() {
-        resetCircleArray()
-        clearAllCircles()
+//        resetCircleArray()
+        clearAllCircleViews()
 
-
-        arraylist[Random.nextInt(25)] = Random.nextInt(4)
-
-
+        calculateNext()
 
         drawAllLines()
+    }
+
+    private fun calculateNext() {
+//        arraylist[Random.nextInt(25)] = Random.nextInt(4)
+
+        if(currentHead == 25) {
+            currentHead = 3
+        } else {
+            currentHead += 1
+        }
+
+
+        for (i in arrList.indices) {
+            if(i == currentHead) {
+                arrList[i] = 1
+            } else if(i == (currentHead-1)) {
+                arrList[i-1] = 2
+            } else if(i == (currentHead-2)) {
+                arrList[i-2] = 3
+            } else {
+                arrList[i] = 0
+            }
+        }
+    }
+
+    private fun getNextInt(myNumber: Int): Int {
+        return when (myNumber) {
+            0 -> {
+                1
+            }
+            1 -> {
+                2
+            }
+            3 -> {
+                3
+            }
+            else -> {
+                0
+            }
+        }
     }
 }
