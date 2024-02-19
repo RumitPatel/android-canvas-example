@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 //        arraylist[Random.nextInt(25)] = Random.nextInt(4)
 
         if(currentHead == 25) {
-            currentHead = 3
+            currentHead = 4
         } else {
             currentHead += 1
         }
