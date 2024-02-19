@@ -122,14 +122,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateNext() {
-//        arraylist[Random.nextInt(25)] = Random.nextInt(4)
-
         if (currentHead == 25) {
             currentHead = 4
         } else {
             currentHead += 1
         }
-
 
         for (i in arrList.indices) {
             if (i == currentHead) {
