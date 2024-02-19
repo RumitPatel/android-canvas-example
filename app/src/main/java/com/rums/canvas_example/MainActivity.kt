@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createLeftRows() {
-        for (item in arrList.subList(0, 10)) {
+        for (item in arrList.subList(0, 10).reversed()) {
             val iv = View(mContext)
             iv.setBGDrawable(mContext, getDrawlFromType(item))
             iv.layoutParams = getRoundLp()
