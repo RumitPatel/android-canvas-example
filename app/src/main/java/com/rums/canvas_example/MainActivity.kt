@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private var arrList = ArrayList<Int>()
 
-    private var currentHead = 0;
+    private var currentHead = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,12 +70,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 arrList.add(0)
             }
-        }
-    }
-
-    private fun resetCircleArray() {
-        for (i in arrList.indices) {
-            arrList[i] = 0
         }
     }
 
@@ -130,7 +124,7 @@ class MainActivity : AppCompatActivity() {
     private fun calculateNext() {
 //        arraylist[Random.nextInt(25)] = Random.nextInt(4)
 
-        if(currentHead == 25) {
+        if (currentHead == 25) {
             currentHead = 4
         } else {
             currentHead += 1
@@ -138,31 +132,14 @@ class MainActivity : AppCompatActivity() {
 
 
         for (i in arrList.indices) {
-            if(i == currentHead) {
+            if (i == currentHead) {
                 arrList[i] = 1
-            } else if(i == (currentHead-1)) {
-                arrList[i-1] = 2
-            } else if(i == (currentHead-2)) {
-                arrList[i-2] = 3
+            } else if (i == (currentHead - 1)) {
+                arrList[i - 1] = 2
+            } else if (i == (currentHead - 2)) {
+                arrList[i - 2] = 3
             } else {
                 arrList[i] = 0
-            }
-        }
-    }
-
-    private fun getNextInt(myNumber: Int): Int {
-        return when (myNumber) {
-            0 -> {
-                1
-            }
-            1 -> {
-                2
-            }
-            3 -> {
-                3
-            }
-            else -> {
-                0
             }
         }
     }
