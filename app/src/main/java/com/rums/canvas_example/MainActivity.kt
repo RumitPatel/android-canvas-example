@@ -113,7 +113,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goNext() {
-//        resetCircleArray()
         clearAllCircleViews()
 
         calculateNext()
