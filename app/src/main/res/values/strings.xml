@@ -4,4 +4,6 @@
     <string name="undo">Undo</string>
     <string name="redo">Redo</string>
     <string name="clear">Clear</string>
+
+    <dimen name="btn_h_w">@dimen/_30sdp</dimen>
 </resources>

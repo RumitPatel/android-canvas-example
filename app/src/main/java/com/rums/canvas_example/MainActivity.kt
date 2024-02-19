@@ -2,42 +2,79 @@ package com.rums.canvas_example
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.rums.canvas_example.utils.getRoundLp
+import com.rums.canvas_example.utils.setBGDrawable
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mContext: Context
+    private lateinit var linLeft: LinearLayout
+    private lateinit var linUp: LinearLayout
+    private lateinit var linRight: LinearLayout
+    private lateinit var btn1: Button
+
+    var arraylist = ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initComponents()
-        setListeners()
+
+        createLeftRows()
+        createUpRows()
+        createRightRows()
     }
 
     private fun initComponents() {
         mContext = this
+        linLeft = findViewById(R.id.linLeft)
+        linUp = findViewById(R.id.linUp)
+        linRight = findViewById(R.id.linRight)
+        btn1 = findViewById(R.id.btn1)
+
+        setListeners()
     }
 
     private fun setListeners() {
-        val undoCanvasView = findViewById<UndoCanvasCustomView>(R.id.undoCanvasView)
-
-        val btnUndo = findViewById<Button>(R.id.btnUndo)
-        btnUndo.setOnClickListener {
-
-            undoCanvasView.undoCanvasDrawing()
+        btn1.setOnClickListener{
+            goNext()
         }
+    }
 
-        val btnRedo = findViewById<Button>(R.id.btnRedo)
-        btnRedo.setOnClickListener {
-            undoCanvasView.redoCanvasDrawing()
-        }
 
-        val btnClear = findViewById<Button>(R.id.btnClear)
-        btnClear.setOnClickListener {
-            undoCanvasView.resetCanvasDrawing()
+    private fun createLeftRows() {
+        repeat(10) {
+            val iv = View(mContext)
+            iv.setBGDrawable(mContext, R.drawable.round_default)
+            iv.layoutParams = getRoundLp()
+            linLeft.addView(iv)
         }
+    }
+
+    private fun createUpRows() {
+        repeat(4) {
+            val iv = View(mContext)
+            iv.setBGDrawable(mContext, R.drawable.round_default)
+            iv.layoutParams = getRoundLp()
+            linUp.addView(iv)
+        }
+    }
+    private fun createRightRows() {
+        repeat(10) {
+            val iv = View(mContext)
+            iv.setBGDrawable(mContext, R.drawable.round_default)
+            iv.layoutParams = getRoundLp()
+            linRight.addView(iv)
+        }
+    }
+
+    private fun goNext() {
+
     }
 }

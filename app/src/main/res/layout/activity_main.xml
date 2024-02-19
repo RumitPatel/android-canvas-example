@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/purple_700"
+    android:paddingStart="60dp"
+    android:paddingTop="80dp"
+    android:paddingEnd="60dp"
+    android:paddingBottom="@dimen/_40sdp">
 
-    <com.rums.canvas_example.MyCanvasView
-        android:id="@+id/canvasView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:id="@+id/linLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:orientation="vertical" />
 
-    <com.rums.canvas_example.UndoCanvasCustomView
-        android:id="@+id/undoCanvasView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:id="@+id/linUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/linRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:orientation="vertical" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnUndo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/undo" />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Click here" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnRedo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/redo" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear" />
-    </TableRow>
-</LinearLayout>
+</RelativeLayout>
