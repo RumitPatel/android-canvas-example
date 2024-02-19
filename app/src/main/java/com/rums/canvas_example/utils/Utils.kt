@@ -10,8 +10,8 @@ object Utils {
 
 }
 
-fun View.setBGDrawable(context: Context,resourceId: Int) {
-    this.background = ContextCompat.getDrawable(context, R.drawable.round_default)
+fun View.setBGDrawable(context: Context, resourceId: Int) {
+    this.background = ContextCompat.getDrawable(context, resourceId)
 }
 
 fun Context.getRoundLp(): LinearLayout.LayoutParams {
@@ -24,3 +24,22 @@ fun Context.roundHW(): Int {
     return resources.getDimension(R.dimen.btn_h_w).toInt()
 }
 
+fun getDrawlFromType(type: Int): Int {
+    return when (type) {
+        0 -> {
+            R.drawable.round_default
+        }
+        1 -> {
+            R.drawable.round_blue
+        }
+        2 -> {
+            R.drawable.round_green
+        }
+        3 -> {
+            R.drawable.round_red
+        }
+        else -> {
+            R.drawable.round_else
+        }
+    }
+}

@@ -6,9 +6,11 @@
         android:width="@dimen/_40sdp"
         android:height="@dimen/_40sdp" />
 
-    <solid android:color="@color/red" />
+    <solid android:color="@color/teal_700" />
 
     <stroke
         android:width="@dimen/_1sdp"
-        android:color="@color/white" />
+        android:dashGap="@dimen/_2sdp"
+        android:dashWidth="@dimen/_1sdp"
+        android:color="@color/red" />
 </shape>
