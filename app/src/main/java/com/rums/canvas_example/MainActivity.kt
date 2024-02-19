@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed(object : Runnable {
             override fun run() {
                 goNext()
-                handler.postDelayed(this, 500)//half sec delay
+                handler.postDelayed(this, 250)//half of half sec delay
             }
         }, 0)
     }
